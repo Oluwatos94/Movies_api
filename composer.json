@@ -1,0 +1,20 @@
+{
+    "name": "user/movies-api",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MoviesApi\\": "src/"
+        }
+    },
+    "require": {
+        "slim/psr7": "^1.6",
+        "laminas/laminas-diactoros": "^3.2",
+        "slim/slim": "4.*",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.0",
+        "vlucas/phpdotenv": "^5.5",
+        "fakerphp/faker": "^1.23",
+      "ext-pdo": "*",
+        "php-di/php-di": "^7.0"
+    }
+}
