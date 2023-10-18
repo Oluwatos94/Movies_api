@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'user/movies-api',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-initial',
+        'version' => 'dev-initial',
+        'reference' => 'a0706aa9031822aca7b181d5eff646ee021fdab2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -198,6 +198,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'slim/php-view' => array(
+            'pretty_version' => '3.2.0',
+            'version' => '3.2.0.0',
+            'reference' => '67f2a616a9336350834013485361f2b2aa049f6e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../slim/php-view',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'slim/psr7' => array(
             'pretty_version' => '1.6.1',
             'version' => '1.6.1.0',
@@ -253,9 +262,9 @@
             'dev_requirement' => false,
         ),
         'user/movies-api' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-initial',
+            'version' => 'dev-initial',
+            'reference' => 'a0706aa9031822aca7b181d5eff646ee021fdab2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

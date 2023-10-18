@@ -3,11 +3,18 @@
 namespace MoviesApi\models;
 
 use DI\Container;
+use DI\DependencyException;
+use DI\NotFoundException;
+use Exception;
+use Faker\Factory;
+use Faker\Generator;
 use MoviesApi\App\Database;
 use PDO;
 class Movies
 {
     protected ?PDO $pdo;
+
+    private Generator $faker;
 
     const DB_TABLE_NAME = 'movies';
 
@@ -18,6 +25,10 @@ class Movies
     protected string $poster;  protected string $type;
     protected float $imdb; protected string $genre;
 
+    /**
+     * @throws DependencyException
+     * @throws NotFoundException
+     */
     public function __construct(Container $container)
     {
         $this->pdo = $container->get('database');
@@ -61,202 +72,38 @@ class Movies
 
     }
 
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     * @return void
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getActorsText(): string
-    {
-        return $this->actorsText;
-    }
-
-    /**
-     * @param string $actorsText
-     * @return void
-     */
-    public function setActorsText(string $actorsText): void
-    {
-        $this->actorsText = $actorsText;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountry(): string
-    {
-        return $this->country;
-    }
-
-    /**
-     * @param string $country
-     */
-    public function setCountry(string $country): void
-    {
-        $this->country = $country;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDirector(): string
-    {
-        return $this->director;
-    }
-
-    /**
-     * @param string $director
-     */
-    public function setDirector(string $director): void
-    {
-        $this->director = $director;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGenre(): string
-    {
-        return $this->genre;
-    }
-
-    /**
-     * @param string $genre
-     */
-    public function setGenre(string $genre): void
-    {
-        $this->genre = $genre;
-    }
-
-    /**
-     * @return float
-     */
-    public function getImdb(): float
-    {
-        return $this->imdb;
-    }
-
-    /**
-     * @param float $imdb
-     */
-    public function setImdb(float $imdb): void
-    {
-        $this->imdb = $imdb;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPoster(): string
-    {
-        return $this->poster;
-    }
-
-    /**
-     * @param string $poster
-     */
-    public function setPoster(string $poster): void
-    {
-        $this->poster = $poster;
-    }
-
-    /**
-     * @return string
-     */
-    public function getReleased(): string
-    {
-        return $this->released;
-    }
-
-    /**
-     * @param string $released
-     */
-    public function setReleased(string $released): void
-    {
-        $this->released = $released;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRuntime(): string
-    {
-        return $this->runtime;
-    }
-
-    /**
-     * @param string $runtime
-     */
-    public function setRuntime(string $runtime): void
-    {
-        $this->runtime = $runtime;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param string $title
-     */
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
-    }
-
-    /**
-     * @return int
-     */
-    public function getYear(): int
-    {
-        return $this->year;
-    }
-
-    /**
-     * @param int $year
-     */
-    public function setYear(int $year): void
-    {
-        $this->year = $year;
-    }
-
     public function getPdo(): PDO
     {
         return $this->pdo;
+    }
+
+    public function fakeDataInput(Container $container): bool
+    {
+        $this->faker = Factory::create();
+
+        try {
+            for ($i = 0; $i < 40; $i++) {
+                $this->insert(
+                    [
+                        $this->faker->numberBetween(1000, 5000), // moviesId input
+                        $this->faker->text(200), // title input
+                        $this->faker->year('now'), // year input
+                        $this->faker->date(), // released
+                        $this->faker->numberBetween(60, 240), // runtime
+                        $this->faker->word(), //genre
+                        $this->faker->name(), // director
+                        $this->faker->name(), // actors
+                        $this->faker->country(), // country
+                        $this->faker->imageUrl(), // poster
+                        $this->faker->randomFloat(1, 1, 10), // imdb
+                        $this->faker->randomElement(['movie', 'series', 'comedy', 'romance']), // type
+                ]);
+            }
+
+        } catch (Exception $exception){
+            error_log($exception->getMessage());
+            return false;
+        }
+        return true;
     }
 }
