@@ -1,15 +1,14 @@
 <?php
 
+use DI\Container;
+use Dotenv\Dotenv;
 use MoviesApi\App\Database;
 use MoviesApi\Controllers\ExceptionController;
 use MoviesApi\Middlewares\MiddlewareAfter;
 use MoviesApi\Middlewares\MiddlewareBefore;
-use DI\Container;
-use Dotenv\Dotenv;
 use Slim\Factory\AppFactory;
 use Slim\Psr7\Response;
 use Slim\Routing\RouteCollectorProxy;
-use Slim\Views\PhpRenderer;
 
 require __DIR__ . '/../vendor/autoload.php';
 

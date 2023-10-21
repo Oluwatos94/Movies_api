@@ -2,6 +2,8 @@
 
 namespace MoviesApi\Controllers;
 
+use Cassandra\Exception\AuthenticationException;
+use Laminas\Diactoros\Response\JsonResponse;
 use DI\DependencyException;
 use DI\NotFoundException;
 use Fig\Http\Message\StatusCodeInterface;
@@ -13,6 +15,10 @@ use Slim\Psr7\Request;
 
 class MoviesController extends A_controller
 {
+    /**
+     * @throws DependencyException
+     * @throws NotFoundException
+     */
     public function indexAction(request $request, response $response): ResponseInterface
     {
         $movies = new movies($this->container);
@@ -20,24 +26,79 @@ class MoviesController extends A_controller
         return $this->render($data, $response);
     }
 
+    /**
+     * @throws DependencyException
+     * @throws NotFoundException
+     */
     public function createAction(request $request, response $response): ResponseInterface
     {
-        $data = ['0' => ['title' => 'created']];
-        return $this->render($data, $response);
+        $requestBody = $request->getParsedBody();
+
+        $title = filter_var($requestBody['title'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $year = filter_var($requestBody['year'], FILTER_VALIDATE_INT);
+        $released = filter_var($requestBody['released'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $runtime = filter_var($requestBody['runtime'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $genre = filter_var($requestBody['genre'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $director = filter_var($requestBody['director'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $actors = filter_var($requestBody['actors'],FILTER_SANITIZE_SPECIAL_CHARS);
+        $country = filter_var($requestBody['country'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $poster = filter_var($requestBody['poster'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $imdb = filter_var($requestBody['imdb'],FILTER_SANITIZE_NUMBER_FLOAT);
+        $type = filter_var($requestBody['type'],FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $movies = new Movies($this->container);
+            $movies->insert([$title, $year, $runtime, $director, $released, $actors, $country, $poster, $imdb, $type, $genre]);
+        $responseData = [
+            'code' => StatusCodeInterface::STATUS_OK,
+            'message' => 'Movies has been created.'
+        ];
+        return $this->render($responseData, $response);
     }
 
+    /**
+     * @throws DependencyException
+     * @throws NotFoundException
+     */
     public function updateAction(request $request, response $response, $args = []): ResponseInterface
     {
+        $requestBody = $this->getRequestBodyAsArray($request);
+
         $id = $args['id'];
-        $data = ['0' => ['id' => $id, 'action' => 'update']];
-        return $this->render($data, $response);
+        $title = filter_var($requestBody['title'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $year = filter_var($requestBody['year'], FILTER_VALIDATE_INT);
+        $released = filter_var($requestBody['released'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $runtime = filter_var($requestBody['runtime'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $genre = filter_var($requestBody['genre'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $director = filter_var($requestBody['director'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $actors = filter_var($requestBody['actors'],FILTER_SANITIZE_SPECIAL_CHARS);
+        $country = filter_var($requestBody['country'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $poster = filter_var($requestBody['poster'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $imdb = filter_var($requestBody['imdb'],FILTER_SANITIZE_NUMBER_FLOAT);
+        $type = filter_var($requestBody['type'],FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $movies = new Movies($this->container);
+        $movies->updateAction([$id, $title, $year, $runtime, $director, $released, $actors, $country, $poster, $imdb, $type, $genre]);
+        $responseData = [
+            'code' => StatusCodeInterface::STATUS_OK,
+            'message' => 'Movies successfully updated.'
+        ];
+        return $this->render($responseData, $response);
     }
 
+    /**
+     * @throws DependencyException
+     * @throws NotFoundException
+     */
     public function deleteAction(request $request, response $response, $args = []): ResponseInterface
     {
         $id = $args['id'];
-        $data = ['0' => ['id' => $id, 'action' => 'delete']];
-        return $this->render($data, $response);
+        $movies = new Movies($this->container);
+        $movies->delete($id);
+        $responseData = [
+            'code' => StatusCodeInterface::STATUS_OK,
+            'message' => 'Movies has been deleted successfully.'
+        ];
+        return $this->render($responseData, $response);
     }
 
     /**

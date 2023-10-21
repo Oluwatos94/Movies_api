@@ -47,6 +47,12 @@
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpStepFilterConfiguration">
+    <skipped_functions>
+      <skipped_function name="Slim\MiddlewareDispatcher-&gt;handle" />
+      <skipped_function name="Slim\App-&gt;handle" />
+    </skipped_functions>
+  </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

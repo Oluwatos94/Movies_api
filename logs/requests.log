@@ -1,10 +1,165 @@
-URI: http://localhost:8000/v1/movies/fill-with-fake-data
-HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["19"]}
-BODY: Get_some_input=Done
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
 
 
-URI: http://localhost:8000/v1/movies/fill-with-fake-data
-HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["19"]}
-BODY: Get_some_input=Done
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["221"]}
+BODY: title=Hong+Kong&year=2004&released=11-05-2004&runtime=50&genre=Emotion&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+Kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["220"]}
+BODY: title=Hong+kong&year=2016&released=11-05-2004&runtime=50&genre=Comedy&director=Marvels&actors=Jack+Chan&country=Netherland&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/9
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/9
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/6
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/6
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/8
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/7
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
+
+
+URI: http://localhost:8880/v1/movies/7
+HEADERS: {"Host":["localhost"],"Content-Type":["application\/x-www-form-urlencoded"],"User-Agent":["insomnia\/8.2.0"],"Accept":["*\/*"],"Content-Length":["212"]}
+BODY: title=china&year=2016&released=11-06-2004&runtime=70&genre=Comedy&director=Marvels&actors=Jack+Chan&country=London&poster=https%3A%2F%2Fimages.app.goo.gl%2FHEjWbyfLUHvkUzRA8&imdb=00.12&type=fun%2C+Love+and+action
 
 

@@ -3,7 +3,7 @@
         'name' => 'user/movies-api',
         'pretty_version' => 'dev-initial',
         'version' => 'dev-initial',
-        'reference' => 'a0706aa9031822aca7b181d5eff646ee021fdab2',
+        'reference' => 'b474ffba129eb7e22e705b981fa4e3d9ca819e43',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -264,7 +264,7 @@
         'user/movies-api' => array(
             'pretty_version' => 'dev-initial',
             'version' => 'dev-initial',
-            'reference' => 'a0706aa9031822aca7b181d5eff646ee021fdab2',
+            'reference' => 'b474ffba129eb7e22e705b981fa4e3d9ca819e43',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,0 +1,24 @@
+STATUS CODE: 200
+HEADERS: {"Content-Type":["application\/json"]}
+BODY: {
+    "code": 200,
+    "message": "Movies has been deleted successfully."
+}
+
+
+STATUS CODE: 200
+HEADERS: {"Content-Type":["application\/json"]}
+BODY: {
+    "code": 200,
+    "message": "Movies has been deleted successfully."
+}
+
+
+STATUS CODE: 200
+HEADERS: {"Content-Type":["application\/json"]}
+BODY: {
+    "code": 200,
+    "message": "Movies has been deleted successfully."
+}
+
+
