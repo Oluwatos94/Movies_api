@@ -8,7 +8,6 @@ use DI\NotFoundException;
 use PDO;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Psr7\Request;
-use Slim\Psr7\Response;
 abstract class A_controller
 {
     protected Container $container;
@@ -17,7 +16,6 @@ abstract class A_controller
      * @var ?PDO
      */
     protected mixed $pdo;
-    protected mixed $view;
 
     /**
      * @throws DependencyException
@@ -35,6 +33,10 @@ abstract class A_controller
         return $response->withHeader('Content-Type', 'application/json');
     }
 
+    /**
+     * @param Request $request
+     * @return mixed[]
+     */
     protected function getRequestBodyAsArray(Request $request): array
     {
         $requestBody = explode('&', urldecode($request->getBody()->getContents()));

@@ -9,7 +9,7 @@ use Slim\Psr7\Response;
 
 class ExceptionController extends A_controller
 {
-    public function notFound(Response $response, Request $request): JsonResponse
+    public function notFound(Request $request, Response $response): JsonResponse
     {
         $middleware = new MiddlewareAfter($this->container);
         $payload = ['status' => 404, 'message' => 'not found'];
