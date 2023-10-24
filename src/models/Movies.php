@@ -8,6 +8,7 @@ use DI\NotFoundException;
 use Exception;
 use Faker\Factory;
 use PDO;
+use Psr\Http\Message\ResponseInterface;
 
 class Movies
 {
@@ -33,7 +34,7 @@ class Movies
 
     public function findById(): int
     {
-
+        return -1;
     }
 
     /**
@@ -53,20 +54,39 @@ class Movies
      */
     public function insert(array $data): int
     {
-        $sql = "INSERT INTO " . self::DB_TABLE_NAME .  "(title, year, runtime, director, released, actors, 
-        country, poster, imdb, type, genre) VALUE(?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO " . self::DB_TABLE_NAME .  " (title, year, runtime, director, released, actors, 
+        country, poster, imdb, type, genre) VALUE(?,?,?,?,?,?,?,?,?,?,?) ";
         $stm = $this->getPdo()->prepare($sql);
-        $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10]],);
+        $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10]]);
         return $this->getPdo()->lastInsertId();
     }
 
-    public function updateAction(array $data): void
+    public function updateAllById(array $data): void
     {
         $sql = "UPDATE " . self::DB_TABLE_NAME . " SET title=?, year=?, runtime=?, director=?, released=?, actors=?,
          country=?, poster=?, imdb=?, type=?, genre=? WHERE id=?";
-        $stm = $this->getPdo()->prepare($sql);
-        $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11]],);
+        $this->extracted($sql, $data);
     }
+
+    public function partialUpdate(array $data): void
+    {
+        $sql = "UPDATE " . self::DB_TABLE_NAME .
+            "SET 
+            title = COALESCE(:title, title),
+            year = COALESCE(:year, year),
+            runtime = COALESCE(:runtime, runtime),
+            director = COALESCE(:director, director),
+            released = COALESCE(:released, released),
+            actors = COALESCE(:actors, actors),
+            country = COALESCE(:country, country),
+            poster = COALESCE(:poster, poster),
+            imdb = COALESCE(:imdb, imdb),
+            type = COALESCE(:type, type)
+            genre = COALESCE(:genre, genre),
+            WHERE id = :id";
+        $this->extracted($sql, $data);
+    }
+
     public function delete(int $id): bool
     {
         $sql = "DELETE FROM " . self::DB_TABLE_NAME . " WHERE id=?";
@@ -77,6 +97,18 @@ class Movies
             return false;
         }
         return true;
+    }
+
+    public function getNumberPerPage($numberPerPage = null): array
+    {
+        $sql = " SELECT * FROM " . self::DB_TABLE_NAME;
+        if ($numberPerPage !== null) {
+            // Add a LIMIT clause to limit the number of results per page
+            $sql .= " LIMIT 2 ";
+        }
+        $stm = $this->getPdo()->prepare($sql);
+        $stm->execute([':numberPerPage', PDO::PARAM_INT]);
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getPdo(): PDO
@@ -105,5 +137,16 @@ class Movies
                 ]);
             }
         return true;
+    }
+
+    /**
+     * @param string $sql
+     * @param array $data
+     * @return void
+     */
+    public function extracted(string $sql, array $data): void
+    {
+        $stm = $this->getPdo()->prepare($sql);
+        $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10],$data[11]]);
     }
 }
