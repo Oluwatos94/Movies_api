@@ -21,7 +21,7 @@ readonly class MiddlewareAfter
      * @param Request        $request PSR-7 request
      * @param RequestHandler $handler PSR-15 request handler
      *
-     * @return Response
+     * @return ResponseInterface
      */
     public function __invoke(Request $request, RequestHandler $handler): ResponseInterface
     {
