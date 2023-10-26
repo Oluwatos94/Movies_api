@@ -54,10 +54,11 @@ class Movies
      */
     public function insert(array $data): int
     {
-        $sql = "INSERT INTO " . self::DB_TABLE_NAME .  " (title, year, runtime, director, released, actors, 
-        country, poster, imdb, type, genre) VALUE(?,?,?,?,?,?,?,?,?,?,?) ";
+        $sql = "INSERT INTO " . self::DB_TABLE_NAME .  " (title, year, released, runtime, genre, director, actors, 
+        country, poster, imdb, type) VALUES (?,?,?,?,?,?,?,?,?,?,?) ";
         $stm = $this->getPdo()->prepare($sql);
-        $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10]]);
+        $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5],
+            $data[6], $data[7], $data[8], $data[9], $data[10]]);
         return $this->getPdo()->lastInsertId();
     }
 
@@ -72,17 +73,17 @@ class Movies
     {
         $sql = "UPDATE " . self::DB_TABLE_NAME .
             "SET 
-            title = COALESCE(:title, title),
-            year = COALESCE(:year, year),
-            runtime = COALESCE(:runtime, runtime),
-            director = COALESCE(:director, director),
-            released = COALESCE(:released, released),
-            actors = COALESCE(:actors, actors),
-            country = COALESCE(:country, country),
-            poster = COALESCE(:poster, poster),
-            imdb = COALESCE(:imdb, imdb),
-            type = COALESCE(:type, type)
-            genre = COALESCE(:genre, genre),
+            title = COALESCE(?, title),
+            year = COALESCE(?, year),
+            runtime = COALESCE(?, runtime),
+            director = COALESCE(?, director),
+            released = COALESCE(?, released),
+            actors = COALESCE(?, actors),
+            country = COALESCE(?, country),
+            poster = COALESCE(?, poster),
+            imdb = COALESCE(?, imdb),
+            type = COALESCE(?, type),
+            genre = COALESCE(?, genre)
             WHERE id = :id";
         $this->extracted($sql, $data);
     }
@@ -104,39 +105,25 @@ class Movies
         $sql = " SELECT * FROM " . self::DB_TABLE_NAME;
         if ($numberPerPage !== null) {
             // Add a LIMIT clause to limit the number of results per page
-            $sql .= " LIMIT 2 ";
+            $sql .= " LIMIT :limit";
         }
         $stm = $this->getPdo()->prepare($sql);
-        $stm->execute([':numberPerPage', PDO::PARAM_INT]);
+        if ($numberPerPage !== null) {
+            $stm->bindParam(':limit', $numberPerPage, PDO::PARAM_INT);
+        }
+        $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getPdo(): PDO
+    public function getSortedMovies($numberPerPage, $fieldToSort): array
     {
-        return $this->pdo;
-    }
+        $sql = "SELECT * FROM " . self::DB_TABLE_NAME . " ORDER BY $fieldToSort";
+        if ($numberPerPage > 0) {
+            $sql .= " LIMIT $numberPerPage";
+        }
 
-    public function fakeDataInput(Container $container): bool
-    {
-        $faker = Factory::create('en_US');
-            for ($i = 0; $i < 40; $i++) {
-                $this->insert(
-                    [
-                        $faker->numberBetween(0, 200), // moviesId input
-                        $faker->text(50), // title input
-                        $faker->year('-10 years'), // year input
-                        $faker->numberBetween(60, 240), // runtime
-                        $faker->name($gender = null), // director
-                        $faker->date(), // released
-                        $faker->name($sex = null), // actors
-                        $faker->country(), // country
-                        $faker->imageUrl(360, 360, 'movies', true, 'action'), // poster
-                        $faker->randomFloat(1, 1, 10), // imdb
-                        $faker->randomElement(['movie', 'series', 'comedy', 'romance']), // type
-                        $faker->word(), //genre
-                ]);
-            }
-        return true;
+        $stm = $this->getPdo()->query($sql);
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -149,4 +136,10 @@ class Movies
         $stm = $this->getPdo()->prepare($sql);
         $stm->execute([$data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10],$data[11]]);
     }
+
+    public function getPdo(): PDO
+    {
+        return $this->pdo;
+    }
+
 }

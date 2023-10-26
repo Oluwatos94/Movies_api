@@ -13,7 +13,7 @@ final readonly class Title
      */
     public function __construct(private string $title)
     {
-        Assertion::minLength($this->title, 5, 'Title must be atleast minimum of 5 character long');
+        Assertion::minLength($this->title, 5, 'Title must be at least minimum of 5 character long');
         Assertion::string($this->title, 'Title must be a string');
     }
 
