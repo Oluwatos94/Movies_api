@@ -12,8 +12,6 @@ use Slim\Routing\RouteCollectorProxy;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-//$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
-//$dotenv->safeLoad();
 
 $container = new Container();
 AppFactory::setContainer($container);
@@ -31,16 +29,16 @@ $db = new Database($container);
     return $db->conn;
 });
 
-//$container->set('view', function () {
-//    return new PhpRenderer(__DIR__ . "/../src/Views");
-//});
 
 $app->group('/v1', function (RouteCollectorProxy $group) {
 $group->get('/movies', 'MoviesApi\Controllers\MoviesController:indexAction');
 $group->post('/movies', 'MoviesApi\Controllers\MoviesController:createAction');
-$group->put('/movies/{id:[0-9]+}', 'MoviesApi\Controllers\MoviesController:updateAction');
+$group->put('/movies/{id:[0-9]+}', 'MoviesApi\Controllers\MoviesController:updateAllByIdAction');
 $group->delete('/movies/{id:[0-9]+}', 'MoviesApi\Controllers\MoviesController:deleteAction');
-$group->get('/movies/fill-with-fake-data','\MoviesApi\Controllers\MoviesController:fakeAction');
+$group->patch('/movies/{id:[0-9]+}', 'MoviesApi\Controllers\MoviesController:partialUpdateAction');
+$group->get('/movies/{numberPerPage}', 'MoviesApi\Controllers\MoviesController:getListPerPage');
+$group->get('/movies/{numberPerPage}/sort/{fieldToSort}', 'MoviesApi\Controllers\MoviesController:getSortedMovies');
+$group->get('/apidocs','\MoviesApi\Controllers\OpenApiController:documentationsAction');
 })->add(new MiddlewareBefore($container))->add(new MiddlewareAfter($container));
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
